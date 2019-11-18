@@ -1,18 +1,31 @@
 # -*- coding: utf-8 -*-
+import time
+
+
 class MainMenu:
 
     def __init__(self, app):
         self.app = app
 
-    def login(self):
+    def open_login_page(self):
         wd = self.app.wd
+        time.sleep(10)
         wd.find_element_by_css_selector('[href="/login"]').click()
+        time.sleep(10)
         # login = '[href="/login"]'
+
+    def open_hp(self):
+        wd = self.app.wd
+        time.sleep(10)
+        wd.find_element_by_css_selector('[href="/"]').click()
+        time.sleep(10)
 
     def all_events(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/events"]').click()
-        # all_events = '[href="/events"]'
+        time.sleep(10)
+        all_events = wd.find_element_by_css_selector('[href="/events"]')
+        all_events.click()
+        # time.sleep(10)
 
     def my_events(self):
         wd = self.app.wd
@@ -26,24 +39,37 @@ class MainMenu:
 
     def place_list(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[class="menu_desktop_level1_label"]').click()
-        # place_list = '[href="/sport_places"]'
+        time.sleep(10)
+        all_places = wd.find_element_by_css_selector('[href="/sport_places"]')
+        all_places.click()
+        # time.sleep(10)
 
     def coach_list(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/coaches"]').click()
+        time.sleep(10)
+        all_coaches = wd.find_element_by_css_selector('[href="/coaches"]')
+        all_coaches.click()
+        # time.sleep(10)
         # coach_list = '[href="/coaches"]'
 
     def become_partner(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/become_partner"]').click()
+        time.sleep(10)
+        become_coach = wd.find_element_by_css_selector('[href="/become_partner"]')
+        become_coach.click()
+        time.sleep(10)
+        form = wd.find_element_by_css_selector('[class="custom-btn__btn"]')
+        form.click()
         # become_partner = '[href="/become_partner"]'
 
-    def become_partner_form(self):
+    def close_login_popup(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/become_partner/coach"]').click()
+        time.sleep(10)
+        close = wd.find_element_by_css_selector('[class="dialogClose float-right"]')
+        close.click()
         # become_partner_form = '[href="/become_partner/coach"]'
 
+    # Menu for logged user/coach
     def dashboard(self):
         wd = self.app.wd
         wd.find_element_by_css_selector('[href="/partner/"]').click()

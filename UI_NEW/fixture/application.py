@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from selenium import webdriver
 from fixture.session import SessionHelper
 from fixture.ui_not_registered import UINotReg
@@ -8,13 +9,13 @@ class Application:
 
     def __init__(self):
         self.wd = webdriver.Chrome()
-        self.wd.implicitly_wait(30)
+        # self.wd.implicitly_wait(30)
         self.session = SessionHelper(self)
         self.ui = UINotReg(self)
 
-    def open_login_pg(self):
+    def open_hp_first_time(self):
         wd = self.wd
-        wd.maximize_window()
+        # wd.maximize_window()
         wd.get('https://decathlon:DecSport@alldoyoga.staging.decathlon.ru/')
         # wd.get('https://decathlon:DecSport@alldoyoga.dev.decathlon.ru/')
 

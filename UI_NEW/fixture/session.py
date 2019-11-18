@@ -1,4 +1,4 @@
-from selenium.webdriver.support.ui import WebDriverWait
+# -*- coding: utf-8 -*-
 
 
 class SessionHelper:
