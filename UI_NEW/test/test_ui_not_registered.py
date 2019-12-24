@@ -11,3 +11,4 @@ def test_ui_not_registered(app):
     app.ui.close_login_popup()
     app.ui.open_login_page()
     app.ui.open_hp()
+    # app.ui.open_terms()

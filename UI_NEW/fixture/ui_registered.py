@@ -1,4 +1,24 @@
 # -*- coding: utf-8 -*-
+from model.main_menu import MainMenu
+
+
+class UIReg:
+    def __init__(self, app):
+        self.app = app
+
+    #Left menu check
+    def events_menu(self):
+        MainMenu.events_left_menu(self)
+
+    def students_menu(self):
+        MainMenu.students_left_menu(self)
+
+    def edit_prof(self):
+        MainMenu.profile_edit(self)
+
+    def view_prof(self):
+        MainMenu.profile_view(self)
+
 
 
 # def check_ev_list(self):
@@ -46,9 +66,4 @@
 # wd.find_element_by_css_selector('[href="/coaches/{coach}_{slug}"]'.format(coach=coach_id, slug=coach_slug)).click()
 # time.sleep(5)
 
-# os.system(r'nul>UI_Output.txt')
-# my_file = open('UI_Output.txt', 'a')
-# my_file.write('Events list available, first event data: \n\n' + str(check_ev_list()) + '\n\n')
-# # my_file.write('Places list available, first place data: \n\n' + str(check_pl_list()) + '\n\n')
-# # my_file.write('Coaches list available, first coach data: \n\n' + str(check_coach_list()) + '\n\n')
-# my_file.close()
+

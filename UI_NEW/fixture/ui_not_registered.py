@@ -36,3 +36,10 @@ class UINotReg:
 
     def open_hp(self):
         MainMenu.open_hp(self)
+
+    # Footer check
+    def open_terms(self):
+        MainMenu.footer_terms(self)
+
+    def events(self):
+        MainMenu.footer_event(self)

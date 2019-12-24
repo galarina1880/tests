@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
+from selenium.webdriver.common.keys import Keys
 
 
 class MainMenu:
@@ -26,16 +27,6 @@ class MainMenu:
         all_events = wd.find_element_by_css_selector('[href="/events"]')
         all_events.click()
         # time.sleep(10)
-
-    def my_events(self):
-        wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/my_events"]').click()
-        # my_events = '[href="/my_events"]'
-
-    def partner_events(self):
-        wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/partner/events"]').click()
-        # partner_events = '[href="/partner/events"]'
 
     def place_list(self):
         wd = self.app.wd
@@ -69,38 +60,99 @@ class MainMenu:
         close.click()
         # become_partner_form = '[href="/become_partner/coach"]'
 
-    # Menu for logged user/coach
+    # Menu for logged coach/user
     def dashboard(self):
         wd = self.app.wd
+        time.sleep(5)
         wd.find_element_by_css_selector('[href="/partner/"]').click()
         # dashboard = '[href="/partner/"]'
 
-    def partner_prof(self):
+    def events_left_menu(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/partner/profile"]').click()
-        # partner_prof = '[href="/partner/profile"]'
+        time.sleep(10)
+        events = wd.find_elements_by_css_selector('[class="menu-link"]')
+        events[0].click()
+        time.sleep(5)
+        # events[[""0""].'/partner/events'].click()
+        # return events
+        # events[0].click()
 
-    def partner_catalog(self):
+    def students_left_menu(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/partner/catalog/231423?page=0&sort=review.count,desc"]').click()
-        # partner_catalog = '[href="/partner/catalog/231423?page=0&sort=review.count,desc"]'
+        time.sleep(10)
+        students = wd.find_elements_by_css_selector('[class="menu-link"]')
+        students[1].click()
+        time.sleep(5)
 
-    def analytics(self):
+    def profile_edit(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/partner/statistics"]').click()
-        # analytics = '[href="/partner/statistics"]'
+        time.sleep(10)
+        prof_edit = wd.find_elements_by_css_selector('[class="menu-link"]')
+        prof_edit[2].click()
+        time.sleep(5)
 
-    def profile(self):
+    def profile_view(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/profile"]').click()
-        # profile = '[href="/profile"]'
+        time.sleep(10)
+        view_prof = wd.find_elements_by_css_selector('[class="menu-link"]')
+        view_prof[3].click()
+        back = wd.find_element_by_link_text('На предыдущую страницу')
+        back.click()
+        # wd.find_element_by_css_selector('[class="back-to-previous-page__text"]').click()
+        time.sleep(5)
 
-    def traffic(self):
+    def events_dashboard(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/partner/my_indicators"]').click()
-        # traffic = '[href="/partner/my_indicators"]'
+        time.sleep(5)
+        events = wd.find_element_by_link_text('Перейти к управлению событиями')
+        events.click()
+        time.sleep(5)
+        # partner_events = '[href="/partner/events"]'
 
-    def finance(self):
+    # def partner_prof(self):
+    #     wd = self.app.wd
+    #     wd.find_element_by_css_selector('[href="/partner/profile"]').click()
+    #     # partner_prof = '[href="/partner/profile"]'
+    #
+    # def partner_catalog(self):
+    #     wd = self.app.wd
+    #     wd.find_element_by_css_selector('[href="/partner/catalog/231423?page=0&sort=review.count,desc"]').click()
+    #     # partner_catalog = '[href="/partner/catalog/231423?page=0&sort=review.count,desc"]'
+    #
+    # def analytics(self):
+    #     wd = self.app.wd
+    #     wd.find_element_by_css_selector('[href="/partner/statistics"]').click()
+    #     # analytics = '[href="/partner/statistics"]'
+    #
+    # def profile(self):
+    #     wd = self.app.wd
+    #     wd.find_element_by_css_selector('[href="/profile"]').click()
+    #     # profile = '[href="/profile"]'
+    #
+    # def traffic(self):
+    #     wd = self.app.wd
+    #     wd.find_element_by_css_selector('[href="/partner/my_indicators"]').click()
+    #     # traffic = '[href="/partner/my_indicators"]'
+    #
+    # def finance(self):
+    #     wd = self.app.wd
+    #     wd.find_element_by_css_selector('[href="/partner/finance"]').click()
+    #     # finance = '[href="/partner/finance"]'
+
+    def my_events(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector('[href="/partner/finance"]').click()
-        # finance = '[href="/partner/finance"]'
+        wd.find_element_by_css_selector('[href="/my_events"]').click()
+        # my_events = '[href="/my_events"]'
+
+    # Footer links
+    def footer_event(self):
+        wd = self.app.wd
+        time.sleep(10)
+        wd.find_element_by_link_text('Записаться на занятие').click()
+
+    def footer_terms(self):
+        wd = self.app.wd
+        time.sleep(10)
+        terms = wd.find_element_by_css_selector('[href="/terms"]')
+        wd.execute_script('arguments[0].scrollIntoView(true);', terms)
+        terms.click()

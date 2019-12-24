@@ -18,19 +18,12 @@ class SessionHelper:
 
     def fb_driver(self, username, password):
         wd = self.app.wd
-        wd.implicitly_wait(5)
-        # WebDriverWait(fb, 40).until(lambda x: fb.find_element_by_css_selector('[href="#/login"]')).click()
+        wd.implicitly_wait(10)
         wd.find_element_by_css_selector('[href="/login"]').click()
-        wd.find_element_by_css_selector('[class="linkFB btn btn-secondary mr-2"]').click()
-        # wd.find_element_by_css_selector('[id="m_login_email"]').send_keys('galarina1666@yandex.ru')
-        # wd.find_element_by_css_selector('[id="m_login_password"]').send_keys('kuzoid123')
+        wd.find_element_by_css_selector('[id="fb-login-button"]').click()
         wd.find_element_by_css_selector('[id="m_login_email"]').send_keys(username)
         wd.find_element_by_css_selector('[id="m_login_password"]').send_keys(password)
-        wd.find_element_by_css_selector('[id="u_0_5"]').click()
-        # fb.find_element_by_css_selector('[id="email"]').send_keys('galarina1666@yandex.ru')
-        # fb.find_element_by_css_selector('[id="pass"]').send_keys('kuzoid123')
-        # fb.find_element_by_css_selector('[id="loginbutton"]').click()
-    #     return fb
+        wd.find_element_by_css_selector('[name="login"]').click()
 
     # def vk_driver(self):
     #     vk = webdriver.Chrome("C:\\WORK\\PYTHON\\workflow\\chromedriver_win32\\chromedriver.exe")
@@ -42,7 +35,7 @@ class SessionHelper:
     #     vk.find_element_by_css_selector('[href="/login"]').click()
     #     vk.find_element_by_css_selector('[class="linkVK btn btn-secondary mr-2"]').click()
     #     vk.find_element_by_css_selector('[name="email"]').send_keys('decast666@gmail.com')
-    #     vk.find_element_by_css_selector('[name="pass"]').send_keys('kuzoid')
+    #     vk.find_element_by_css_selector('[name="pass"]').send_keys('Kuzoid123')
     #     vk.find_element_by_css_selector('[id="install_allow"]').click()
     #     return vk
 
