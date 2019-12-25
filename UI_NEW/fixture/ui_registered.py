@@ -19,6 +19,9 @@ class UIReg:
     def view_prof(self):
         MainMenu.profile_view(self)
 
+    def studios_menu(self):
+        MainMenu.studios_left_menu(self)
+
 
 
 # def check_ev_list(self):

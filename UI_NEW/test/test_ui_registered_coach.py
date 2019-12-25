@@ -8,4 +8,5 @@ def test_ui_not_registered(app):
     app.ui_reg.students_menu()
     app.ui_reg.edit_prof()
     app.ui_reg.view_prof()
+    app.ui_reg.studios_menu()
     # app.ui_reg.file()

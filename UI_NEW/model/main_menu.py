@@ -98,7 +98,13 @@ class MainMenu:
         view_prof[3].click()
         back = wd.find_element_by_link_text('На предыдущую страницу')
         back.click()
-        # wd.find_element_by_css_selector('[class="back-to-previous-page__text"]').click()
+        time.sleep(5)
+
+    def studios_left_menu(self):
+        wd = self.app.wd
+        time.sleep(10)
+        stud = wd.find_elements_by_css_selector('[class="menu-link"]')
+        stud[4].click()
         time.sleep(5)
 
     def events_dashboard(self):
