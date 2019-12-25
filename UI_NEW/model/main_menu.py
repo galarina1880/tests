@@ -60,7 +60,7 @@ class MainMenu:
         close.click()
         # become_partner_form = '[href="/become_partner/coach"]'
 
-    # Menu for logged manager/coach/user
+    # Menu for logged manager/coach
     def manager(self):
         wd = self.app.wd
         time.sleep(5)
@@ -172,38 +172,8 @@ class MainMenu:
         events = wd.find_element_by_link_text('Перейти к управлению событиями')
         events.click()
         time.sleep(5)
-        # partner_events = '[href="/partner/events"]'
 
-    # def partner_prof(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_css_selector('[href="/partner/profile"]').click()
-    #     # partner_prof = '[href="/partner/profile"]'
-    #
-    # def partner_catalog(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_css_selector('[href="/partner/catalog/231423?page=0&sort=review.count,desc"]').click()
-    #     # partner_catalog = '[href="/partner/catalog/231423?page=0&sort=review.count,desc"]'
-    #
-    # def analytics(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_css_selector('[href="/partner/statistics"]').click()
-    #     # analytics = '[href="/partner/statistics"]'
-    #
-    # def profile(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_css_selector('[href="/profile"]').click()
-    #     # profile = '[href="/profile"]'
-    #
-    # def traffic(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_css_selector('[href="/partner/my_indicators"]').click()
-    #     # traffic = '[href="/partner/my_indicators"]'
-    #
-    # def finance(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_css_selector('[href="/partner/finance"]').click()
-    #     # finance = '[href="/partner/finance"]'
-
+    # Menu for logged user
     def my_events(self):
         wd = self.app.wd
         wd.find_element_by_css_selector('[href="/my_events"]').click()
