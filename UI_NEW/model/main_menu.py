@@ -60,7 +60,43 @@ class MainMenu:
         close.click()
         # become_partner_form = '[href="/become_partner/coach"]'
 
-    # Menu for logged coach/user
+    # Menu for logged manager/coach/user
+    def manager(self):
+        wd = self.app.wd
+        time.sleep(5)
+        wd.find_element_by_css_selector('[href="/partner/club/"]').click()
+        time.sleep(5)
+
+    def events_man_left_menu(self):
+        wd = self.app.wd
+        time.sleep(10)
+        events = wd.find_elements_by_css_selector('[class="menu-link"]')
+        events[0].click()
+        time.sleep(5)
+
+    # def coaches_man_left_menu(self):
+    #     wd = self.app.wd
+    #     time.sleep(10)
+    #     coaches = wd.find_elements_by_css_selector('[class="menu-link"]')
+    #     coaches[1].click()
+    #     time.sleep(5)
+
+    def studios_man_left_menu(self):
+        wd = self.app.wd
+        time.sleep(10)
+        studios = wd.find_elements_by_css_selector('[class="menu-link"]')
+        studios[1].click()
+        time.sleep(5)
+
+    def students_man_left_menu(self):
+        wd = self.app.wd
+        time.sleep(10)
+        students = wd.find_elements_by_css_selector('[class="menu-link"]')
+        students[2].click()
+        # students = wd.find_element_by_css_selector('[class="menu-link router-link-exact-active router-link-active"]')
+        # students.click()
+        time.sleep(15)
+
     def dashboard(self):
         wd = self.app.wd
         time.sleep(5)
@@ -80,8 +116,9 @@ class MainMenu:
     def students_left_menu(self):
         wd = self.app.wd
         time.sleep(10)
-        students = wd.find_elements_by_css_selector('[class="menu-link"]')
-        students[1].click()
+        wd.find_element_by_css_selector('[href="/partner/students"]')
+        # students = wd.find_elements_by_css_selector('[class="menu-link"]')
+        # students[1].click()
         time.sleep(5)
 
     def profile_edit(self):
@@ -105,6 +142,28 @@ class MainMenu:
         time.sleep(10)
         stud = wd.find_elements_by_css_selector('[class="menu-link"]')
         stud[4].click()
+        time.sleep(5)
+
+    def partn_left_menu(self):
+        wd = self.app.wd
+        time.sleep(10)
+        stud = wd.find_elements_by_css_selector('[class="menu-link"]')
+        stud[5].click()
+        time.sleep(5)
+
+    def goods_left_menu(self):
+        wd = self.app.wd
+        time.sleep(10)
+        goods = wd.find_elements_by_css_selector('[class="menu-link"]')
+        goods[6].click()
+        time.sleep(5)
+
+    def instr(self):
+        wd = self.app.wd
+        time.sleep(10)
+        wd.find_element_by_css_selector('[href="/partner/how_to_use"]')
+        # instr = wd.find_elements_by_css_selector('[class="menu-link"]')
+        # instr[7].click()
         time.sleep(5)
 
     def events_dashboard(self):

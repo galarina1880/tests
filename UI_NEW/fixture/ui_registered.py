@@ -6,7 +6,7 @@ class UIReg:
     def __init__(self, app):
         self.app = app
 
-    #Left menu check
+    #Coach left menu check
     def events_menu(self):
         MainMenu.events_left_menu(self)
 
@@ -21,6 +21,31 @@ class UIReg:
 
     def studios_menu(self):
         MainMenu.studios_left_menu(self)
+
+    def partner_menu(self):
+        MainMenu.partn_left_menu(self)
+
+    def goods(self):
+        MainMenu.goods_left_menu(self)
+
+    def instr(self):
+        MainMenu.instr(self)
+
+    # Manager menu check
+    def man_dashboard(self):
+        MainMenu.manager(self)
+
+    def man_events(self):
+        MainMenu.events_man_left_menu(self)
+
+    def man_students(self):
+        MainMenu.students_man_left_menu(self)
+
+    def man_coaches(self):
+        MainMenu.coaches_man_left_menu(self)
+
+    def man_studios(self):
+        MainMenu.studios_man_left_menu(self)
 
 
 
